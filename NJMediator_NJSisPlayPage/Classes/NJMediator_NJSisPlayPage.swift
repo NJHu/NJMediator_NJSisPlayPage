@@ -9,12 +9,10 @@ fileprivate let kMediator_Action_NativeFetchSisPlayController = "SisPlayControll
 
 extension NJMediator {
 
-    public func Mediator_NJSisPlayPage_PlayController(video: String, topicId: String, videoSize: CGSize) -> UIViewController? {
+    public func Mediator_NJSisPlayPage_PlayController(jsonData: Any) -> UIViewController? {
         
         var params = [String: Any]()
-        params["video"] = video
-        params["topicId"] = topicId
-        params["videoSize"] = videoSize
+        params["jsonData"] = jsonData
         
         let result = self.perform(nameSpace: kMediator_Target_NameSpace, target: kMediator_Target_NJSisPlayPage, action: kMediator_Action_NativeFetchSisPlayController, params: params, shouldCacheTarget: false)
 
